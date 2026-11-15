@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Patas & Pelos</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- INÍCIO: Header -->
+    <header>
+        <img src="img80.jpg" id="top" alt="Patas e Pelos">
+        
+        <!-- INÍCIO: Nav -->
+        <nav class="nav">
+            <!-- INÍCIO: Lista de navegação -->
+            <ul class="nav-list">
+                <!-- INÍCIO: Item Home -->
+                <li><a href="Index.html">Home</a></li>
+                <!-- FIM: Item Home -->
+            </ul>
+            <!-- FIM: Lista de navegação -->
+        </nav>
+        <!-- FIM: Nav -->
+    </header>
+    <!-- FIM: Header -->
+
+    <!-- INÍCIO: Main -->
+    <main>
+        <!-- INÍCIO: Seção Login vazia -->
+        <section id="Login">
+
+        </section>
+        <!-- FIM: Seção Login vazia -->
+    </main>
+    <!-- FIM: Main -->
+
+    <!-- INÍCIO: Seção do formulário de login -->
+    <section class="secao">
+        <!-- INÍCIO: Título principal -->
+        <h1> Login </h1>
+        <!-- FIM: Título principal -->
+        
+        <!-- INÍCIO: Parágrafo descritivo -->
+        <p>Preencha com seus dados</p>
+        <!-- FIM: Parágrafo descritivo -->
+
+        <!-- ÁREA DO AVISO DE CADASTRO SUCEDIDO -->
+        <div id="alerta-cadastro"></div>
+
+        <!-- INÍCIO: Formulário -->
+        <form action="login.php" method="POST" id="formLogin">
+
+            <div class="form-grupo">
+                <label for="responsavel">Seu nome</label>
+                <input
+                    type="text"
+                    id="responsavel"
+                    name="nome"
+                    placeholder="Insira seu nome"
+                    required
+                >
+            </div>
+
+            <div class="form-grupo">
+                <label for="CPF">CPF</label>
+                <input
+                    type="text"
+                    id="CPF"
+                    name="CPF"
+                    placeholder="Insira seu CPF"
+                    maxlength="14"
+                    required
+                >
+            </div>
+
+            <div class="form-grupo">
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Insira sua senha"
+                    required
+                >
+            </div>
+
+            <button type="button" id="cadastro"
+                onclick="window.location.href='cadastro.html'">
+                Cadastrar-se aqui!
+            </button>
+
+            <button type="submit" id="Confirmar">
+                Entrar
+            </button>
+
+        </form>
+        <!-- FIM: Formulário -->
+    </section>
+    <!-- FIM: Seção do formulário de login -->
+
+    <script src="loginBanco.js"></script>
+    <script>
+        // Deteta se o utilizador acabou de se cadastrar e exibe a mensagem de sucesso
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('cadastrado') === '1') {
+            const alerta = document.getElementById('alerta-cadastro');
+            alerta.innerHTML = '<div class="alerta sucesso" style="background-color: #d4edda; color: #155724; padding: 12px; border-radius: 5px; margin-bottom: 20px; text-align: center; border: 1px solid #c3e6cb;">Cadastro realizado com sucesso! Faça o seu login abaixo.</div>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="condições.css">
+    <link rel="stylesheet" href="responsivo.css">
+    
+</head>
+<body>
+    <!-- INÍCIO: Header -->
+     <header>
+        <img src="img80.jpg" id="top" alt="">
+        
+        <!-- INÍCIO: Nav -->
+        <nav class="nav">
+            <!-- INÍCIO: Lista de navegação -->
+            <ul class="nav-list">
+                <!-- INÍCIO: Item Home -->
+                <li><a href="Index.html">Home</a></li>
+                <!-- FIM: Item Home -->
+            </ul>
+            <!-- FIM: Lista de navegação -->
+        </nav>
+        <!-- FIM: Nav -->
+    </header>
+    <!-- FIM: Header -->
+
+<!-- INÍCIO: Main -->
+<main>
+    <!-- INÍCIO: Seção do formulário de agendamento -->
+    <section class="secao">
+        <!-- INÍCIO: Título principal -->
+        <h1> Agende para seu pet </h1>
+        <!-- FIM: Título principal -->
+        
+        <!-- INÍCIO: Parágrafo descritivo -->
+        <p> Preencha com o serviço desejado</p>
+        <!-- FIM: Parágrafo descritivo -->
+
+        <!-- INÍCIO: Formulário -->
+        <form action="processar_agendamento.php" method="POST">
+
+            <!-- INÍCIO: Grupo Nome do Tutor -->
+            <div class="form-grupo">
+                <label for="name">Seu nome</label>
+                <input type="text"  id="responsavel" name="nome-tutor" placeholder="insira seu nome">
+            </div>
+            <!-- FIM: Grupo Nome do Tutor -->
+
+            <!-- INÍCIO: Grupo Telefone -->
+            <div class="form-grupo">
+                <label for="tefone-responsavel">Seu telefone</label>
+                <input type="number" id="tel" name="telefone-responsavel" placeholder="Insira seu telefone" required>
+            </div>
+            <!-- FIM: Grupo Telefone -->
+
+            <!-- INÍCIO: Grupo Nome do Pet -->
+            <div class="form-grupo">
+                <label for="nome-pet">Nome do pet</label>
+                <input type="text" id="name_pet" name="nome-pet" placeholder="Nome do seu pet" required>
+            </div>
+            <!-- FIM: Grupo Nome do Pet -->
+
+            <!-- INÍCIO: Grupo Raça do Pet -->
+            <div class="form-grupo">
+                <label for="raca">Raça do pet</label>
+                <select id="raca" name="raca_pet" required>
+                    <option value="">Selecione a raça</option>
+                    <option value="SRD / Vira-lata">SRD / Vira-lata</option>
+                    <option value="Shih-tzu">Shih-tzu</option>
+                    <option value="Poodle">Poodle</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Labrador">Labrador</option>
+                    <option value="Bulldog">Bulldog</option>
+                    <option value="Yorkshire">Yorkshire</option>
+                    <option value="Pastor Alemão">Pastor Alemão</option>
+                    <option value="Outra">Outra</option>
+                </select>
+            </div>
+            <!-- FIM: Grupo Raça do Pet -->
+             
+            <!-- INÍCIO: Grupo Seleção de Serviço -->
+            <div class="form-grupo">
+                <label for="serviço">Escolha o serviço</label>
+                <select id="serviço" name="serviço">
+                    <option value="">Selecione o serviço</option>
+                    <option value="banho e Tosa">Banho e Tosa   $390,90</option>
+                    <option value="Consultas e Exames ">Consultas e Exames  $1.400,00</option>
+                    <option value="Adestramento">Adestramento  $5.290,50</option>
+                </select>
+            </div>
+            <!-- FIM: Grupo Seleção de Serviço -->
+
+            <!-- INÍCIO: Grupo Data Desejada -->
+            <div>
+                <label for="Data">Data desejada</label>
+                <input type="date" id="Data" name="data-desejada" required>
+            </div>
+            <!-- FIM: Grupo Data Desejada -->
+            <br>
+            
+            <!-- INÍCIO: Botão de Confirmação -->
+            <div>
+                <button type="submit" id="Confirmar">Confirmar Agendamento</button>
+            </div>
+            <!-- FIM: Botão de Confirmação -->
+
+        </form>
+        <!-- FIM: Formulário -->
+
+    </section>
+    <!-- FIM: Seção do formulário de agendamento -->
+</main>
+<!-- FIM: Main -->
+
+<!-- INÍCIO: Imagem lateral 1 -->
+<div id="img1">
+    <img src="img.cond3.jpg" id="imro">       
+</div>
+<!-- FIM: Imagem lateral 1 -->
+
+<!-- INÍCIO: Imagem lateral 2 -->
+<div>
+    <img src="img.cond6.jpg" id="imru">
+</div>
+<!-- FIM: Imagem lateral 2 -->
+
+<!-- INÍCIO: Footer -->
+ <footer>
+        <br>
+        <h6>(31) 98378-5687</h6>
+        <br>
+        <h6>Av. A, 304 - Liberdade, Ribeirão das Neves - MG, 33822-700</h6>
+        <br>
+        <h6> Direitos reservados ©- v0.70.1</h6>
+    </footer>
+<!-- FIM: Footer -->
+
+</body>
+</html>

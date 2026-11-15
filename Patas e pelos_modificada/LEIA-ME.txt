@@ -1,0 +1,14 @@
+Patas & Pelos — CSS responsivos com Flexbox
+
+Substitua os arquivos CSS correspondentes no projeto original pelos arquivos desta pasta.
+
+- style.css: Index.html
+- banho.css: banho.html
+- adestra.css: adestra.html
+- medico.css: medico.html
+- cadastro.css: cadastro.html
+- login.css: login.html
+- agendamentos.css: agendamentos.html
+- condições.css: condições.html (arquivo referenciado no HTML)
+
+As estruturas HTML, IDs, classes, imagens e textos não foram alterados. Os layouts usam Flexbox para cabeçalho, navegação, seções, cards, formulários, rodapé e adaptação dos elementos. A tabela de agendamentos mantém rolagem horizontal para não comprimir as colunas em telas pequenas.
