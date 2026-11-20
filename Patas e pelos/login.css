@@ -195,56 +195,150 @@ h6{
 
 
 /* INÍCIO: Media Query */
-@media only screen and  (max-width:1050px){
-    body{
-     background-color: aqua;
+
+/* RESPONSIVIDADE */
+
+/* Tablets e telas menores */
+@media screen and (max-width: 1050px) {
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
- 
- .main h1{
- font-size: 45px;
- }
- .main p{
-     font-size: 18px;
- }
- .main{
-     background-size: cover;
- }
 
- .about{
-    flex-direction: column;
-    padding-top: 80px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    #top {
+        margin-right: 0;
+        max-width: 150px;
+        max-height: 80px;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-list a {
+        padding: 10px;
+    }
+
+    .secao {
+        width: 80%;
+        max-width: 500px;
+        height: auto;
+        min-height: 450px;
+        margin: 100px auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .secao h1 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    p {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    form {
+        margin-left: 0;
+    }
+
+    .form-grupo {
+        margin-right: 0;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 35px;
+    }
 }
 
-.about div{
-    max-width: 80%;
 
-}
+/* Celulares */
+@media screen and (max-width: 600px) {
 
-.about div h2{
-    font-size: 45px;
-}
+    body {
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
 
-.about img{
-    width: 80%;
-    margin-top: 30%;
-}
-.projects img{
-    width: 27.5%;
-}
-footer{
-    flex-direction: column;
-}
+    header {
+        height: 80px;
+        padding: 0 12px;
+    }
 
-footer h3{
-font-size: 24px;
-margin-bottom: 8px;
-}
+    #top {
+        max-width: 110px;
+        max-height: 65px;
+        object-fit: contain;
+    }
 
-footer p{
-    margin: 0;
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-list a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .secao {
+        width: calc(100% - 30px);
+        max-width: 500px;
+        min-height: 0;
+        height: auto;
+        margin: 70px auto;
+        padding: 25px 20px;
+    }
+
+    .secao h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    h1:hover {
+        margin-right: 0;
+    }
+
+    p {
+        font-size: 17px;
+        margin: 25px 0;
+    }
+
+    form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-grupo {
+        font-size: 17px;
+        margin: 20px 0;
+        padding-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        min-height: 40px;
+        margin: 5px 0 0;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        max-width: 100%;
+        margin-top: 15px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #cadastro,
+    #Confirmar {
+        margin-right: 5px;
+    }
 }
- }
-/* FIM: Media Query */
