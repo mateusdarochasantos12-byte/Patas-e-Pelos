@@ -1,248 +1,578 @@
-/* INÍCIO: Reset global */
-*{
+
+
+
+/* =====================================
+   RESET GLOBAL
+===================================== */
+
+* {
     padding: 0;
     outline: 0;
     margin: 0;
     border: 0;
+    box-sizing: border-box;
 }
-/* FIM: Reset global */
 
-/* INÍCIO: Header */
-header{
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
     background-color: #000000;
     height: 80px;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 9;
-    margin-top: -10px;
 }
-/* FIM: Header */
 
-/* INÍCIO: Identificador Top */
-#top{
-    margin-right: 1670px;
+/* LOGO */
+
+#top {
+    max-width: 140px;
+    max-height: 80px;
+    object-fit: contain;
+    margin: 0;
 }
-/* FIM: Identificador Top */
 
-/* INÍCIO: Lista de navegação */
-.nav-list{
+/* NAVEGAÇÃO */
+
+.nav-list {
     display: flex;
     align-items: center;
-    list-style:none ;
-    margin-right: 28px;
-    margin-top: 30px;
+    list-style: none;
+    margin: 0 28px 0 0;
 }
-/* FIM: Lista de navegação */
 
-/* INÍCIO: Links da lista de navegação */
-.nav-list a{
+.nav-list a {
     text-decoration: none;
     color: #ddd;
     padding: 20px;
 }
-/* FIM: Links da lista de navegação */
 
-/* INÍCIO: Efeito hover nos links de navegação */
-.nav-list a:hover{
-    color: rgb(255, 255, 255);
+.nav-list a:hover {
+    color: #ffffff;
     border-bottom: solid rgb(233, 233, 233);
 }
-/* FIM: Efeito hover nos links de navegação */
 
-/* INÍCIO: Seção Home */
-#Home{
-    background-image: url(ChatGPT\ Image\ 23\ de\ set.\ de\ 2026\,\ 21_40_39.png);
+
+/* =====================================
+   ORGANIZAÇÃO PRINCIPAL
+===================================== */
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 30%);
+    column-gap: 3%;
+    align-items: start;
+}
+
+/* HOME */
+
+#Home {
+    grid-column: 1 / -1;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-image: url("ChatGPT Image 23 de set. de 2026, 21_40_39.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #ffffff;
     height: 800px;
 }
-/* FIM: Seção Home */
 
-/* INÍCIO: Seção de funcionamento */
-#funcionamento{
-    align-items: center;
-    justify-content: center;
-    margin-left: 100px;
-    font-size: x-large;
-    margin-top: 90px;
-     font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-}
-/* FIM: Seção de funcionamento */
+/* TÍTULO INICIAL */
 
-/* INÍCIO: Lista ordenada */
-ol{
-    margin-top: 30px;
-}
-/* FIM: Lista ordenada */
-
-/* INÍCIO: Container da imagem */
-#imgo{
-    margin-left: 1400px;
-    margin-top: -600px;
-    margin-bottom: 90px;
-}
-/* FIM: Container da imagem */
-
-/* INÍCIO: Estilização da imagem em imgo */
-#imgo img{
-    border-radius: 30px;
-    border: 3px;
-    border-color: #09a2fa;
-}
-/* FIM: Estilização da imagem em imgo */
-p{
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  
-}
-/* INÍCIO: Título h1 */
-h1{
+#Home h1{
     font-size:90px;
     color: #ffffff;
     margin-left: 929px;
-    margin-top: 70px;
+    margin-top: 520px;
     margin-right: 70px;
     font-style: italic;
     background-color:#ff7300;
     opacity: 80%;
     border-radius: 30px;
-        transform: scale(1.06);                              /* Aumenta ligeiramente de tamanho */
+    transform: scale(1.06);                     
     box-shadow: 0 12px 25px rgba(255, 30, 0, 0.6);  
 }
-/* FIM: Título h1 */
 
-/* INÍCIO: Efeito hover no h2 */
-h2:hover{
-      border-bottom: solid rgb(2, 118, 164);
-      margin-right: 850px;
-}
-/* FIM: Efeito hover no h2 */
 
-/* INÍCIO: Efeito hover no h4 */
-h4:hover{
-     border-bottom: solid rgb(2, 118, 164);
-      margin-right: 822px;
-}
-/* FIM: Efeito hover no h4 */
+/* =====================================
+   FUNCIONAMENTO
+===================================== */
 
-/* INÍCIO: Identificador h1promo */
-#h1promo{
-    margin-left: 670px;
-    margin-right: 690px;
-    margin-top:60px ;
-    text-decoration: none;
-    background-color: #ff5900;
-    transform: scale(1.06);                              /* Aumenta ligeiramente de tamanho */
-    box-shadow: 0 12px 25px rgba(255, 136, 0, 0.6);      /* Sombra luminosa */
+#funcionamento {
+    grid-column: 1;
+    width: calc(100% - 5%);
+    margin: 90px 0 40px 5%;
+    font-size: x-large;
+    font-family: "Playfair Display", serif;
 }
 
-/* FIM: Identificador h1promo */
 
-/* INÍCIO: Seção de promoções */
-#promo{
-    background-color: #804949;
+/* PARÁGRAFOS */
+
+p {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    color: #000000;
+}
+
+/* LISTA */
+
+ol {
+    margin-top: 30px;
+}
+
+/* EFEITOS HOVER */
+
+h2,
+h4 {
+    display: table;
+    width: fit-content;
+    max-width: 100%;
+}
+
+h2:hover,
+h4:hover {
+    border-bottom: solid rgb(2, 118, 164);
+    margin-right: 0;
+}
+
+
+/* =====================================
+   IMAGEM
+===================================== */
+
+#imgo {
+    grid-column: 2;
+    width: 100%;
+    margin: 90px 0 40px;
+    border-radius: 190px;
+    overflow: hidden;
+    border: 1px #fff solid;
+}
+
+#imgo img {
+    display: block;
+    width: 100%;
+    height: 640px;
+    object-fit: contain;
+    border-radius: 90px;
+}
+/* =====================================
+   PROMOÇÃO
+===================================== */
+
+#promo {
+    grid-column: 1 / -1;
+    min-height: 240px;
+    text-align: center;
+    padding: 1px 15px 20px;
+    margin-top: 30px;
+    background-color: #033e2e;
     height: 270px;
     align-items: center;
     justify-content: center;
 }
-/* FIM: Seção de promoções */
+/* TEXTO DA PROMOÇÃO */
 
-/* INÍCIO: Título h5 */
-h5{
+h5 {
     color: #ffffff;
     font-size: 50px;
-    margin-left:720px;
-    margin-top: 50px;
+    margin: 25px 0 0;
+    text-align: center;
 }
-/* FIM: Título h5 */
 
-/* INÍCIO: Links gerais */
-a{
+/* INÍCIO: Identificador h1promo */
+#h1promo {
+    display: table;
+    margin: 35px auto;
+    padding: 8px 22px;
+    background: linear-gradient(135deg, #034b70, #012b49);
+    border: none;
+    font-size:50px;
+    border-radius: 22px;
+    box-shadow: 0 0 15px rgba(0, 255, 100, 0.55),
+                0 0 30px rgba(0, 180, 90, 0.3);
+    transition: all 0.3s ease;
+}
+
+#h1promo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#h1promo:hover {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #087eae, #034b70);
+    box-shadow: 0 0 20px #00ff75,
+                0 0 40px rgba(0, 255, 117, 0.7),
+                0 0 60px rgba(0, 180, 90, 0.35);
+}
+/* FIM: Identificador h1promo */
+
+/* =====================================
+   LINKS
+===================================== */
+
+a {
     text-decoration: none;
     color: #ffffff;
 }
-/* FIM: Links gerais */
 
-/* INÍCIO: Rodapé (Footer) */
-footer{
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
     background-color: #000000;
-    height: 120px;
+    min-height: 120px;
     display: flex;
     gap: 30px;
     align-items: center;
     justify-content: center;
+    padding: 15px;
 }
-/* FIM: Rodapé (Footer) */
 
-/* INÍCIO: Título h6 */
-h6{
+h6 {
     color: #ffffff;
     font-size: 20px;
     margin-top: -3px;
 }
-/* FIM: Título h6 */
 
 
+/* =====================================
+   TABLETS
+===================================== */
 
-/* INÍCIO: Media Query */
-@media only screen and  (max-width:1050px){
-    body{
-     background-color: aqua;
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    min-width: 0;
+}
+
+@media screen and (max-width: 1050px) {
+    #Home {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        height: 700px;
     }
- 
- .main h1{
- font-size: 45px;
- }
- .main p{
-     font-size: 18px;
- }
- .main{
-     background-size: cover;
- }
-
- .about{
-    flex-direction: column;
-    padding-top: 80px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
 }
 
-.about div{
-    max-width: 80%;
-
+@media screen and (max-width: 600px) {
+    #Home {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        height: 500px;
+    }
 }
 
-.about div h2{
-    font-size: 45px;
+
+@media screen and (max-width: 1050px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    #top {
+        max-width: 150px;
+        max-height: 80px;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    #Home {
+        height: 800px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #Home h1 {
+        font-size: 45px;
+        margin: 35px 20px 0 auto;
+        display: table;
+        padding: 5px 15px;
+        max-width: calc(100% - 40px);
+    }
+
+    #funcionamento {
+        width: auto;
+        margin: 50px 30px 30px;
+        font-size: 18px;
+    }
+
+    #funcionamento p {
+        font-size: 18px;
+    }
+
+    #funcionamento br {
+        display: none;
+    }
+
+    #imgo {
+        width: 70%;
+        margin: 30px auto;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    #imgo img {
+        width: 100%;
+        height: 350px;
+        object-fit: contain;
+        border-radius: 30px;
+    }
+
+    #promo {
+        margin-top: 20px;
+        min-height: 250px;
+    }
+
+    h5 {
+        font-size: 38px;
+        margin: 35px 0 0;
+    }
+
+    #h1promo {
+        font-size: 55px;
+        margin: 20px auto 0;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 120px;
+        padding: 20px;
+        text-align: center;
+    }
 }
 
-.about img{
-    width: 80%;
-    margin-top: 30%;
-}
-.projects img{
-    width: 27.5%;
-}
-footer{
-    flex-direction: column;
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 80px;
+        padding: 0 12px;
+    }
+
+    #top {
+        max-width: 110px;
+        max-height: 65px;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-list a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #Home {
+        height: 500px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #Home h1 {
+        font-size: 28px;
+        margin: 40px 10px 0;
+        padding: 8px 12px;
+        max-width: calc(100% - 20px);
+    }
+
+    #funcionamento {
+        width: auto;
+        margin: 35px 15px 20px;
+        font-size: 16px;
+    }
+
+    #funcionamento h2 {
+        font-size: 21px;
+    }
+
+    #funcionamento h4 {
+        font-size: 17px;
+    }
+
+    #funcionamento p {
+        font-size: 16px;
+    }
+
+    #funcionamento li {
+        font-size: 15px;
+    }
+
+    #funcionamento br {
+        display: none;
+    }
+
+    #funcionamento ol {
+        padding-left: 22px;
+    }
+
+    #imgo {
+        width: 90%;
+        margin: 25px auto;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    #imgo img {
+        display: block;
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+        border-radius: 20px;
+    }
+
+    #promo {
+        min-height: 210px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    h5 {
+        font-size: 26px;
+        margin: 20px 0;
+    }
+
+    #h1promo {
+        font-size: 25px;
+        margin: 15px auto;
+        max-width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 25px 15px;
+        gap: 12px;
+        text-align: center;
+    }
+
+    footer h6 {
+        font-size: 14px;
+    }
 }
 
-footer h3{
-font-size: 24px;
-margin-bottom: 8px;
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 30%);
+    column-gap: 3%;
+    align-items: start;
+}
+@media screen and (max-width: 600px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    #funcionamento {
+        width: auto;
+        margin: 35px 15px 20px;
+    }
+
+    #imgo {
+        position: static;
+        width: calc(100% - 30px);
+        margin: 25px auto;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    #imgo img {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+        object-fit: contain;
+    }
+
+    #promo {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 
-footer p{
-    margin: 0;
+/* =====================================
+   H1 - MÉDICO | BRILHO LARANJA
+===================================== */
+
+#Home h1 {
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 8px rgba(243, 172, 49, 0.9),
+        0 0 16px rgba(255, 145, 30, 0.7);
+
+    box-shadow:
+        0 8px 22px rgba(255, 130, 0, 0.4),
+        0 0 35px rgba(255, 165, 50, 0.25);
+
+    transition: all 0.4s ease;
 }
- }
-/* FIM: Media Query */
+
+@media (hover: hover) and (pointer: fine) {
+
+    #Home h1:hover {
+        color: #ffffff;
+
+        text-shadow:
+            0 0 4px #d69d00,
+            0 0 10px #ffe0a3,
+            0 0 22px #ffad42,
+            0 0 38px #ff8500,
+            0 0 55px rgba(255, 120, 0, 0.85);
+
+        box-shadow:
+            0 8px 25px rgba(255, 140, 0, 0.6),
+            0 0 45px rgba(255, 165, 40, 0.5),
+            0 0 70px rgba(255, 100, 0, 0.3);
+
+        transform: scale(1.025);
+    }
+}
+

@@ -8,23 +8,32 @@
 /* FIM: Reset global */
 
 /* INÍCIO: Header */
-header{
-    background-color: #000000;
+header {
+    background-color: #000;
     height: 80px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: sticky;
     top: 0;
-    z-index: 9;
+    z-index: 999;
     margin-top: -10px;
 }
+
 /* FIM: Header */
 
 /* INÍCIO: Identificador Top */
-#top{
-    margin-right: 1670px;
+#top {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 110px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0;
 }
+
 /* FIM: Identificador Top */
 
 /* INÍCIO: Lista de navegação */
@@ -33,7 +42,7 @@ header{
     align-items: center;
     list-style:none ;
     margin-right: 28px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 /* FIM: Lista de navegação */
 
@@ -119,7 +128,7 @@ input{
     background-color: #f7f0f0;
     border:5px #000000;
     border-radius: 2px;
-    font-size: 20px;
+    font-size: medium;
     margin-left: 5px;
 }
 /* FIM: Inputs */
@@ -144,42 +153,39 @@ option{
 
 /* INÍCIO: Botão */
 button{
-    margin-top: 15px;
+    margin-top: 20px;
 }
 /* FIM: Botão */
 
-/* INÍCIO: Link do botão cadastro */
+/* Botões de login e cadastro */
+#Confirmar,
 #cadastro {
+    display: inline-block;
+    width: 160px;
+    padding: 9px 12px;
+    margin: 10px 5px;
+
+    background: linear-gradient(135deg, #252525, #000);
+    color: #fff;
+    font-size: 18px;
+    font-family: inherit;
+
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
     text-decoration: none;
-    color: #ffffff;
-    background-color: rgb(0, 0, 0);
-    border: 1px;
-    border-radius:4px;
-    font-size: 20px;
-    margin-left: 3px;
     cursor: pointer;
-}
-/* FIM: Link do botão cadastro */
 
-/* INÍCIO: Link do botão confirmar */
-#Confirmar {
-    text-decoration: none;
-    color: #f9f8f8;
-    background-color: rgb(0, 0, 0);
-    border: 1px;
-    border-radius:4px;
-    font-size: 30px;
-    margin-left: 3px;
-    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-
-#cadastro, #Confirmar {
-    display: block;
-    width: 40%;           
-    margin-bottom: 10px; 
+#Confirmar:hover,
+#cadastro:hover {
+    background: linear-gradient(15deg, #444, #111);
+    transform: scale(1.04);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
 }
-/* FIM: Link do botão confirmar */
 
 /* INÍCIO: Rodapé (Footer) */
 footer{
@@ -204,56 +210,160 @@ h6{
 
 
 /* INÍCIO: Media Query */
-@media only screen and  (max-width:1050px){
-    body{
-     background-color: aqua;
+
+/* RESPONSIVIDADE */
+
+/* Tablets e telas menores */
+@media screen and (max-width: 1050px) {
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
- 
- .main h1{
- font-size: 45px;
- }
- .main p{
-     font-size: 18px;
- }
- .main{
-     background-size: cover;
- }
 
- .about{
-    flex-direction: column;
-    padding-top: 80px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    #top {
+        margin-right: 0;
+        max-width: 150px;
+        max-height: 80px;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-list a {
+        padding: 10px;
+    }
+
+    .secao {
+        width: 80%;
+        max-width: 500px;
+        height: auto;
+        min-height: 450px;
+        margin: 100px auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .secao h1 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    p {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    form {
+        margin-left: 0;
+    }
+
+    .form-grupo {
+        margin-right: 0;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 35px;
+    }
 }
 
-.about div{
-    max-width: 80%;
 
+/* Celulares */
+@media screen and (max-width: 600px) {
+
+    body {
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+
+    header {
+        height: 80px;
+        padding: 0 12px;
+    }
+
+    #top {
+        max-width: 110px;
+        max-height: 65px;
+        object-fit: contain;
+    }
+
+    .nav-list {
+        margin: 0;
+    }
+
+    .nav-list a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .secao {
+        width: calc(100% - 30px);
+        max-width: 500px;
+        min-height: 0;
+        height: auto;
+        margin: 70px auto;
+        padding: 25px 20px;
+    }
+
+    .secao h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    h1:hover {
+        margin-right: 0;
+    }
+
+    p {
+        font-size: 17px;
+        margin: 25px 0;
+    }
+
+    form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-grupo {
+        font-size: 17px;
+        margin: 20px 0;
+        padding-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        min-height: 40px;
+        margin: 5px 0 0;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        max-width: 100%;
+        margin-top: 15px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #cadastro,
+    #Confirmar {
+        margin-right: 5px;
+    }
 }
 
-.about div h2{
-    font-size: 45px;
-}
 
-.about img{
-    width: 80%;
-    margin-top: 30%;
+/* Ajustes para telas menores */
+@media screen and (max-width: 600px) {
+    #top {
+        left: 10px;
+        width: 90px;
+        height: 80px;
+    }
 }
-.projects img{
-    width: 27.5%;
-}
-footer{
-    flex-direction: column;
-}
-
-footer h3{
-font-size: 24px;
-margin-bottom: 8px;
-}
-
-footer p{
-    margin: 0;
-}
- }
-/* FIM: Media Query */
