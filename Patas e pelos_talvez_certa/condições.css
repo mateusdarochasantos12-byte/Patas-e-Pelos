@@ -391,3 +391,118 @@ body > div:not(#img1) {
         overflow: hidden !important;
     }
 }
+
+/* =====================================
+   EFEITO 3D AVANÇADO - IMAGENS
+===================================== */
+
+.imagem-3d {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transform-style: preserve-3d;
+    transform: perspective(900px) rotateY(-5deg) rotateX(3deg) scale(1.02);
+
+    box-shadow:
+        12px 18px 25px rgba(0, 0, 0, 0.25),
+        0 25px 45px rgba(0, 0, 0, 0.20);
+
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.65s ease;
+
+    animation: flutuar3D 4s ease-in-out infinite;
+}
+
+/* MOVIMENTO CONTÍNUO */
+@keyframes flutuar3D {
+    0%, 100% {
+        transform: perspective(900px) rotateY(-5deg) rotateX(3deg) translateY(0);
+    }
+
+    50% {
+        transform: perspective(900px) rotateY(5deg) rotateX(-3deg) translateY(-12px);
+    }
+}
+
+/* INTERAÇÃO COM O MOUSE */
+@media (hover: hover) and (pointer: fine) {
+    .imagem-3d:hover {
+        animation: none;
+
+        transform:
+            perspective(900px)
+            rotateY(15deg)
+            rotateX(-9deg)
+            translateZ(55px)
+            scale(1.09);
+
+        box-shadow:
+            20px 30px 35px rgba(0, 0, 0, 0.35),
+            0 40px 65px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+    .imagem-3d {
+        animation: none;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .imagem-3d {
+        animation: none;
+        transition: none;
+        transform: none;
+    }
+}
+
+/* =====================================
+   EFEITO 3D - MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .imagem-3d {
+        animation: flutuarMobile 3.5s ease-in-out infinite;
+        transform-style: preserve-3d;
+        transition: transform 0.4s ease;
+    }
+
+    @keyframes flutuarMobile {
+        0%, 100% {
+            transform:
+                perspective(800px)
+                rotateY(-7deg)
+                rotateX(4deg)
+                translateY(0)
+                scale(1.02);
+        }
+
+        50% {
+            transform:
+                perspective(800px)
+                rotateY(7deg)
+                rotateX(-4deg)
+                translateY(-12px)
+                scale(1.04);
+        }
+    }
+
+    /* INTERAÇÃO AO TOCAR */
+    .imagem-3d:active {
+        animation: none;
+
+        transform:
+            perspective(800px)
+            rotateY(12deg)
+            rotateX(-8deg)
+            scale(1.08);
+
+        box-shadow:
+            0 25px 40px rgba(0, 0, 0, 0.35);
+    }
+}

@@ -279,10 +279,7 @@ justify-items: center;
 .princip{
     margin-top: 10px;
 }
-.princip:hover{
-     border-bottom: solid rgb(2, 118, 164);
-    margin-right: 1px;
-}
+
 p{
   
     margin-left: 0;
@@ -376,15 +373,7 @@ h1{
    margin-left: 30px;
    font-size: xxx-large;
 }
-h1:hover{
-    border-bottom: solid rgb(2, 118, 164);
-    margin-right: 1449px;
-}
-#h1-sev:hover{
-    border-bottom: solid rgb(2, 118, 164);
-    margin-right: 1480px;
 
-}
 
 /* final do h1*/
 
@@ -568,10 +557,6 @@ h6{
         font-size: 40px;
     }
 
-    h1:hover,
-    #h1-sev:hover {
-        margin-right: 0;
-    }
 
     .serviços {
         width: calc(100% - 40px);
@@ -1175,5 +1160,249 @@ h6{
     .imagens img.entrando-anterior,
     .imagens img.saindo-anterior {
         animation-duration: 0.01ms;
+    }
+}
+
+
+/* =====================================
+   H1 - EFEITO 3D AZUL + VERDE
+   Aplicado somente a Nosso Objetivo
+   e Nossos serviços
+===================================== */
+
+.princip,
+#h1-sev {
+    display: inline-block;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        text-shadow 0.4s ease,
+        filter 0.4s ease;
+
+    cursor: default;
+    will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .princip:hover,
+    #h1-sev:hover {
+        transform:
+            perspective(800px)
+            translateZ(30px)
+            rotateX(7deg)
+            rotateY(-5deg)
+            translateY(-5px)
+            scale(1.12);
+
+        text-shadow:
+            0 2px 2px rgba(0, 70, 100, 0.35),
+            0 5px 12px rgba(0, 130, 170, 0.35),
+            0 10px 25px rgba(0, 190, 150, 0.30),
+            0 0 18px rgba(40, 180, 190, 0.20);
+
+        filter: brightness(1.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .princip,
+    #h1-sev {
+        transition: none;
+    }
+}
+
+
+
+/* =====================================
+   AJUSTES FINAIS - DESKTOP E MOBILE
+===================================== */
+
+/* Centraliza somente o título "Nosso Objetivo" */
+#Sobre .princip {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+/* Retira o brilho azulado forte dos dois títulos.
+   Mantém apenas um destaque suave em verde-menta. */
+.princip,
+#h1-sev {
+    text-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .princip:hover,
+    #h1-sev:hover {
+        text-shadow:
+            0 3px 8px rgba(35, 125, 105, 0.20),
+            0 7px 16px rgba(75, 170, 135, 0.18);
+        filter: brightness(1.04);
+    }
+}
+
+/* Em telas touch, o título recebe uma entrada suave,
+   pois não existe hover tradicional no celular. */
+@keyframes tituloEntradaMobile {
+    0% {
+        opacity: 0.65;
+        transform: perspective(800px) translateY(12px) rotateX(8deg);
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(800px) translateY(0) rotateX(0);
+        text-shadow: 0 5px 14px rgba(75, 170, 135, 0.16);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .princip,
+    #h1-sev {
+        animation: tituloEntradaMobile 0.85s ease both;
+    }
+
+    /* Cards respondem ao toque */
+    .card-servico {
+        transition:
+            transform 0.28s ease,
+            box-shadow 0.28s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .card-servico:active {
+        transform:
+            perspective(900px)
+            rotateX(2deg)
+            scale(0.985);
+        box-shadow: 0 12px 26px rgba(30, 115, 95, 0.16);
+    }
+
+    /* Mantém a profundidade do carrossel também no celular */
+    .carrossel {
+        perspective: 900px;
+        touch-action: pan-y;
+    }
+
+    .imagens {
+        transform-style: preserve-3d;
+    }
+
+    .imagens img.entrando-proximo,
+    .imagens img.saindo-proximo,
+    .imagens img.entrando-anterior,
+    .imagens img.saindo-anterior {
+        animation-duration: 0.7s;
+        animation-timing-function: cubic-bezier(0.22, 0.7, 0.2, 1);
+    }
+}
+
+/* Evita que o efeito dos títulos seja cortado em telas pequenas */
+@media screen and (max-width: 600px) {
+    #Sobre {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #Sobre .princip {
+        width: 100%;
+        margin: 10px auto 0;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .princip,
+    #h1-sev {
+        transform-origin: center;
+    }
+
+    .carrossel {
+        overflow: hidden;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .princip,
+    #h1-sev,
+    .card-servico,
+    .imagens img.entrando-proximo,
+    .imagens img.saindo-proximo,
+    .imagens img.entrando-anterior,
+    .imagens img.saindo-anterior {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* =====================================
+   CARROSSEL - EFEITO 3D INTERATIVO
+===================================== */
+
+.carrossel {
+    perspective: 1400px;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.4s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+    border-radius: 18px;
+}
+
+.imagens {
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out;
+    will-change: transform;
+}
+
+.imagens img {
+    border-radius: 18px;
+}
+
+/* Efeito ao passar o mouse */
+@media (hover: hover) and (pointer: fine) {
+    .carrossel:hover {
+        box-shadow:
+            0 25px 45px rgba(0, 0, 0, 0.30),
+            0 0 22px rgba(40, 150, 125, 0.20);
+    }
+}
+
+/* Movimento automático no celular */
+@keyframes carrosselFlutuante {
+    0%, 100% {
+        transform: perspective(1200px)
+                   rotateY(-3deg)
+                   rotateX(2deg)
+                   translateY(0);
+    }
+
+    50% {
+        transform: perspective(1200px)
+                   rotateY(3deg)
+                   rotateX(-2deg)
+                   translateY(-8px);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .imagens {
+        animation: carrosselFlutuante 4s ease-in-out infinite;
+    }
+
+    .carrossel:active .imagens {
+        animation-play-state: paused;
+        transform: perspective(1200px) scale(1.035);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .imagens {
+        animation: none !important;
+        transition: none !important;
     }
 }

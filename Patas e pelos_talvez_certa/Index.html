@@ -116,8 +116,8 @@
 
 
 
-<img src="Veterinário cuidando de cão dourado.png"  alt="" class="ativa">
-<img src="Menina feliz abraçando gato e cachorro.png" alt="">
+<img src="doutor.img.png"  alt="" class="ativa">
+<img src="minina.img.png" alt="">
 <img src="Cãozinho Dormindo com Ursinho de Crochê.png"  alt="">
 
 
@@ -261,6 +261,37 @@ card.addEventListener("mouseleave", () => {
 
 });
 
+</script>
+
+<script>
+const carrossel = document.querySelector(".carrossel");
+const imagensCarrossel = document.querySelector(".imagens");
+
+if (carrossel && imagensCarrossel) {
+
+    carrossel.addEventListener("mousemove", (event) => {
+
+        const rect = carrossel.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+
+        const rotacaoY = (x - 0.5) * 16;
+        const rotacaoX = (0.5 - y) * 12;
+
+        imagensCarrossel.style.transform = `
+            perspective(1200px)
+            rotateX(${rotacaoX}deg)
+            rotateY(${rotacaoY}deg)
+            translateZ(18px)
+            scale(1.025)
+        `;
+    });
+
+    carrossel.addEventListener("mouseleave", () => {
+        imagensCarrossel.style.transform = "";
+    });
+}
 </script>
 </body>
 <!-- Final do body-->
