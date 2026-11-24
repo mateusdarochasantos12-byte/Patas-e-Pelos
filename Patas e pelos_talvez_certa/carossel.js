@@ -1,44 +1,66 @@
 const imagens = document.querySelectorAll(".imagens img");
 
-const anterior = document.querySelector("#anterior");
-const proximo = document.querySelector("#proximo");
+const botaoAnterior = document.getElementById("anterior");
+const botaoProximo = document.getElementById("proximo");
 
-let indice = 0;
+let indiceAtual = 0;
+let animando = false;
 
+function mudarImagem(direcao) {
 
+    if (animando || imagens.length <= 1) return;
 
-function mostrarImagem() {
+    animando = true;
 
-    imagens.forEach(function(imagem) {
-        imagem.classList.remove("ativa");
-    });
+    const imagemAtual = imagens[indiceAtual];
 
-    imagens[indice].classList.add("ativa");
+    let proximoIndice;
 
+    if (direcao === "proximo") {
+        proximoIndice = (indiceAtual + 1) % imagens.length;
+    } else {
+        proximoIndice = (indiceAtual - 1 + imagens.length) % imagens.length;
+    }
+
+    const proximaImagem = imagens[proximoIndice];
+
+    imagemAtual.classList.remove("ativa");
+    imagemAtual.classList.add(
+        direcao === "proximo"
+            ? "saindo-proximo"
+            : "saindo-anterior"
+    );
+
+    proximaImagem.classList.add(
+        direcao === "proximo"
+            ? "entrando-proximo"
+            : "entrando-anterior"
+    );
+
+    proximaImagem.addEventListener("animationend", function finalizar() {
+
+        imagemAtual.classList.remove(
+            "saindo-proximo",
+            "saindo-anterior"
+        );
+
+        proximaImagem.classList.remove(
+            "entrando-proximo",
+            "entrando-anterior"
+        );
+
+        proximaImagem.classList.add("ativa");
+
+        indiceAtual = proximoIndice;
+        animando = false;
+
+    }, { once: true });
 }
 
-
-proximo.addEventListener("click", function() {
-
-    indice++;
-
-    if (indice >= imagens.length) {
-        indice = 0;
-    }
-
-    mostrarImagem();
-
+botaoProximo.addEventListener("click", () => {
+    mudarImagem("proximo");
 });
 
-
-anterior.addEventListener("click", function() {
-
-    indice--;
-
-    if (indice < 0) {
-        indice = imagens.length - 1;
-    }
-
-    mostrarImagem();
-
+botaoAnterior.addEventListener("click", () => {
+    mudarImagem("anterior");
 });

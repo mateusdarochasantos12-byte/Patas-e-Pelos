@@ -135,19 +135,67 @@ ol {
 
 /* EFEITOS HOVER */
 
+/* =====================================
+   H2 E H4 - EFEITO PROFISSIONAL
+===================================== */
+
 h2,
 h4 {
-    display: table;
-    width: fit-content;
-    max-width: 100%;
+    display: inline-block;
+    position: relative;
+
+    color: #795c00;
+
+    text-shadow:
+        0 2px 3px rgba(30, 65, 45, 0.12);
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
 }
 
-h2:hover,
-h4:hover {
-    border-bottom: solid rgb(2, 118, 164);
-    margin-right: 0;
+/* HOVER ELEGANTE */
+@media (hover: hover) and (pointer: fine) {
+
+    h2:hover,
+    h4:hover {
+        color: #ff9100;
+        transform: translateY(-2px);
+
+        text-shadow:
+            0 2px 3px rgba(30, 65, 45, 0.15),
+            0 0 10px rgba(110, 170, 125, 0.28),
+            0 0 20px rgba(145, 185, 135, 0.16);
+    }
 }
 
+/* ENTRADA SUAVE */
+h2,
+h4 {
+    animation: entradaTitulos 0.7s ease both;
+}
+
+@keyframes entradaTitulos {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+    h2,
+    h4 {
+        animation: none;
+        transition: none;
+    }
+}
 
 /* =====================================
    IMAGEM
@@ -662,5 +710,20 @@ main {
 
     #Home .hero-fundo::after {
         animation: none;
+    }
+}
+
+h2,
+h4 {
+    display: inline-block;
+    transition: all 0.3s ease !important;
+    transform-origin: left center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    h2:hover,
+    h4:hover {
+        transform: scale(1.06) !important;
+        text-shadow: 0 0 12px rgba(110, 170, 125, 0.3);
     }
 }

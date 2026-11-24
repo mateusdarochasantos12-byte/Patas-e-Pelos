@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_atualizado_mobile.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,9 @@
 <!-- Inicio do header-->
     <header>
     
-        <img src="img80.jpg" id="top" alt="">
-        
+        <a href="Index.html">
+            <img src="img80.jpg" id="top" alt="">
+            </a>
         <!-- INÍCIO: Navegação -->
         <nav class="nav">
             <!-- INÍCIO: Lista de navegação -->
@@ -115,9 +116,9 @@
 
 
 
-<img src="Veterinário cuidando de cão dourado.png" id="imgSo" alt="" class="ativa">
-<img src="Menina feliz abraçando gato e cachorro.png" id="imgSo" alt="">
-<img src="Cãozinho Dormindo com Ursinho de Crochê.png" id="imgSo" alt="">
+<img src="Veterinário cuidando de cão dourado.png"  alt="" class="ativa">
+<img src="Menina feliz abraçando gato e cachorro.png" alt="">
+<img src="Cãozinho Dormindo com Ursinho de Crochê.png"  alt="">
 
 
 </div>
@@ -140,7 +141,8 @@
 
    
     <!-- CARD 1: BANHO E TOSA -->
-    <article id="Banho" class="card">
+    <article id="Banho" class="card card-servico">
+
 
         <div class="div-card">
 
@@ -163,7 +165,8 @@
 
 
     <!-- CARD 2: CONSULTAS E EXAMES -->
-    <article id="med" class="card">
+    <article id="med" class="card card-servico">
+
 
         <div class="div-card">
 
@@ -184,7 +187,7 @@
 
 
     <!-- CARD 3: ADESTRAMENTO -->
-    <article id="Ades" class="card">
+    <article id="Ades" class="card card-servico">
 
         <div class="div-card">
 
@@ -218,6 +221,47 @@
     </footer>
 <!-- FIM: Footer -->
 <script src="carossel.js" defer></script>
+<script>
+
+    
+document.querySelectorAll(".card-servico").forEach(card => {
+
+card.addEventListener("mousemove", event => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const centroX = rect.width / 2;
+    const centroY = rect.height / 2;
+
+    const rotacaoY = ((x - centroX) / centroX) * 12;
+    const rotacaoX = ((centroY - y) / centroY) * 12;
+
+    card.style.transform = `
+        perspective(1000px)
+        rotateX(${rotacaoX}deg)
+        rotateY(${rotacaoY}deg)
+        translateY(-10px)
+        scale3d(1.025, 1.025, 1.025)
+    `;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+});
+
+card.addEventListener("mouseleave", () => {
+
+    card.style.transform = "";
+
+    card.style.setProperty("--mouse-x", "50%");
+    card.style.setProperty("--mouse-y", "50%");
+});
+
+});
+
+</script>
 </body>
 <!-- Final do body-->
 
